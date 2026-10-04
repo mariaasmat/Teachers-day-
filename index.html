@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher's Day</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Great+Vibes&family=Inter:wght@400;500;600&display=swap');
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,Arial,sans-serif;background:#07172e;color:#fff}body{overflow-x:hidden}
+.scene{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 10%,#244f83,#0c2850 38%,#07172e 78%)}
+.scene:before,.scene:after{content:"";position:absolute;border-radius:50%;opacity:.25}.scene:before{width:420px;height:420px;left:-180px;top:-140px;background:#78b6ff}.scene:after{width:500px;height:500px;right:-250px;bottom:-240px;background:#3e7ec0}
+.wrap{width:min(1040px,100%);position:relative;z-index:2;text-align:center}.intro h1{font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(26px,5vw,42px);margin:0}.script{font-family:'Great Vibes',cursive;font-size:clamp(50px,10vw,82px);line-height:1;color:#dceeff}.quote{margin:12px auto;max-width:600px;font-family:'DM Serif Display',serif;font-size:clamp(15px,2.5vw,20px);line-height:1.45}.quote span{display:block}.divider{margin:12px auto 0;width:130px;height:1px;background:#b9dcff}
+.stage{display:grid;place-items:center;min-height:390px;perspective:1200px}.envelope{width:min(570px,88vw);aspect-ratio:1.65/1;position:relative;cursor:pointer;filter:drop-shadow(0 22px 30px #0006);transition:.3s}.envelope:hover{transform:translateY(-5px)}
+.env-back{position:absolute;inset:0;border-radius:14px;background:linear-gradient(145deg,#4e98df,#1761a7 65%,#104a84);box-shadow:inset 0 0 0 1px #ffffff38;overflow:hidden}.env-back:before,.env-back:after{content:"";position:absolute;width:72%;height:110%;background:#ffffff17;top:-5%;transform:rotate(29deg)}.env-back:before{left:-39%}.env-back:after{right:-39%;transform:rotate(-29deg)}
+.flap{position:absolute;z-index:5;left:0;right:0;top:0;margin:auto;width:0;height:0;border-left:calc(min(285px,44vw)) solid transparent;border-right:calc(min(285px,44vw)) solid transparent;border-top:calc(min(175px,27vw)) solid #3f89cf;transform-origin:50% 0;transition:transform .85s cubic-bezier(.2,.8,.2,1),z-index 0s .25s}
+.seal{position:absolute;z-index:8;left:50%;top:44%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:#d9ecff;color:#1761a7;display:grid;place-items:center;font-size:24px;box-shadow:0 7px 15px #0004;transition:.25s}
+.paper{position:absolute;z-index:3;left:8%;right:8%;bottom:4%;height:84%;border-radius:8px;background:linear-gradient(135deg,#fff,#eaf4ff);color:#12365e;box-shadow:0 8px 20px #0003;transform:translateY(16%);transition:.9s cubic-bezier(.2,.8,.2,1);display:flex;align-items:center;justify-content:center;padding:25px}.paper-inner{border:1px solid #1761a733;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:18px}.paper .small{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#4e79a1}.paper h2{font-family:'Great Vibes',cursive;font-size:clamp(34px,7vw,54px);font-weight:400;margin:8px 0;color:#1761a7}.paper p{max-width:430px;font-family:'DM Serif Display',serif;font-size:clamp(14px,2.3vw,18px);line-height:1.55;margin:0}.paper .heart{margin-top:14px;color:#1761a7;font-size:20px}
+.opened .flap{transform:rotateX(180deg);z-index:2}.opened .seal{opacity:0}.opened .paper{transform:translateY(-3%)}.opened .envelope{cursor:default}
+.open-btn{border:0;background:#dceeff;color:#12365e;border-radius:999px;padding:13px 21px;margin-top:13px;font:600 14px Inter;box-shadow:0 8px 20px #0003;cursor:pointer}.hint{margin-top:15px;font-size:12px;letter-spacing:1.5px;color:#c5ddf5;text-transform:uppercase}.message{margin:24px auto 0}.message strong{font-family:'DM Serif Display',serif;font-weight:400;font-size:18px}.ameen{display:block;margin-top:7px;font-family:'Great Vibes',cursive;font-size:29px;color:#dceeff}
+@media(max-width:600px){.scene{padding:42px 12px 18px;align-items:flex-start}.stage{min-height:300px}.envelope{width:92vw}.seal{width:47px;height:47px;font-size:19px}.paper{padding:14px}.paper-inner{padding:10px}.hint{margin-top:8px}.message{margin-top:17px}}
+
+.card .dua, .card .dua-ameen { opacity:0; transform:translateY(8px); transition:opacity .5s ease, transform .5s ease; }
+.card.show-dua .dua, .card.show-dua .dua-ameen { opacity:1; transform:translateY(0); }
+</style></head>
+<body><main class="scene"><section class="wrap">
+<div class="intro"><h1>Happy</h1><div class="script">Teacher's Day</div><div class="divider"></div></div>
+<div class="stage"><div class="envelope" id="envelope" role="button" tabindex="0">
+<div class="env-back"></div><div class="paper"><div class="paper-inner"><div class="small">A heartfelt dua for you</div><h2>Dua</h2><p>May ALLAH bless you with good health, happiness and peace. May ALLAH forgive your sins, accept your good deeds and raise your rank in this world and hereafter.</p><div class="heart">Ameen. ⭐✨</div></div></div><div class="flap"></div><div class="seal">♥</div></div></div>
+<button class="open-btn" id="openBtn">Click to open →</button>
+
+</section></main>
+<script>const e=document.getElementById('envelope'),b=document.getElementById('openBtn');function o(){const isOpen=e.classList.toggle('opened');b.textContent=isOpen?'Close ♥':'Open with love ♥';}e.onkeydown=x=>{if(x.key==='Enter'||x.key===' '){x.preventDefault();o()}};b.addEventListener('click', o);
+</script>
+</body></html>
